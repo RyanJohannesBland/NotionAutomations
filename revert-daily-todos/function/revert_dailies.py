@@ -1,9 +1,9 @@
+""" Move all Completed Daily tasks back to To-Do in Notion Kanban board. """
 import json
 import requests
-import pdb
 
 
-with open("env.json", 'r') as env_file:
+with open("function/env.json", 'r', encoding="UTF-8") as env_file:
     ENV = json.loads(env_file.read())
 HEADERS = {
     "Authorization": f"Bearer {ENV['token']}",
@@ -11,7 +11,11 @@ HEADERS = {
 }
 
 
-def main():
+def main(_, __):
+    """
+        Grab all "Daily" Type tasks and set them to "To-Do" status. Then grab
+        all remaining "Completed" status tasks and delete them.
+    """
     # Harvest all daily tasks.
     response = requests.post(
         f"https://api.notion.com/v1/databases/{ENV['database_id']}/query",
@@ -65,5 +69,6 @@ def main():
         )
 
 
+# Test locally by running "python revert-daily-todos/revert_dailies.py".
 if __name__ == "__main__":
-    main()
+    main(None, None)

@@ -5,7 +5,7 @@ This repo is a set of personal automations using the [Notion Rest API](https://d
 
 # Automations
 
-- revert-daily-tasks -> Acts on a Kanban board database to revert all "Daily" tasks to "To Do" status.
+- revert-daily-tasks -> Acts on a Kanban board database to revert all "Daily" tasks to "To Do" status. Deletes all non-Daily "Completed" tasks.
 
 
 # Development

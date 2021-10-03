@@ -1,0 +1,4 @@
+{
+    "token": "<your notion integration token>",
+    "database_id": "<your notion database id>"
+}

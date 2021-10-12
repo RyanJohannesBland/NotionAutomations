@@ -22,10 +22,20 @@ def main(_, __):
         headers=HEADERS,
         json={
             "filter": {
-                "property": "Type",
-                "select": {
-                    "equals": "Daily"
-                }
+                "or": [
+                    {
+                        "property": "Type",
+                        "select": {
+                            "equals": "Daily"
+                        }
+                    },
+                    {
+                        "property": "Type",
+                        "select": {
+                            "equals": "Morning Routine"
+                        }
+                    }
+                ]
             }
         }
     ).json()["results"]

@@ -20,7 +20,8 @@ To work on one of these automations, perform the following:
 ```docker
 docker run -it -v "$(pwd)":/notion-automations python:3.9 bash
 ```
-5. You now have a fully built development environment!
+5. cd notion_automations and pip install -r requirements.txt
+6. You now have a fully built development environment! Run the scripts from the notion_automations/ directory with the command "python function/{file_name}" to test.
 
 
 # Helpful documentation when working with Notion Rest API
